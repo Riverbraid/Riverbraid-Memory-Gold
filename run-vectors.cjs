@@ -59,12 +59,12 @@ function getSnapshot() {
 const cmd = process.argv[2];
 if (cmd === "snapshot") {
   fs.writeFileSync(SNAPSHOT, JSON.stringify(getSnapshot(), null, 0) + "\n");
-  console.log("✅ Snapshot Generated.");
+  console.log(" Snapshot Generated.");
 } else if (cmd === "verify") {
   const snap = JSON.parse(fs.readFileSync(SNAPSHOT));
   const current = getSnapshot();
   if (current.sha256 !== snap.sha256) throw new Error("CRITICAL: State Drift Detected.");
-  console.log("✅ VERIFIED: Floor is Stationary.");
+  console.log(" VERIFIED: Floor is Stationary.");
 } else {
   console.log("Usage: node run-vectors.cjs [snapshot|verify]");
   process.exit(1);

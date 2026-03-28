@@ -1,4 +1,4 @@
-// Riverbraid-Judicial-Gold – Fail-Closed Gate
+// Riverbraid-Judicial-Gold  Fail-Closed Gate
 // 7-bit ASCII only.
 
 export const evaluateSignal = (signal, rules) => {
@@ -24,8 +24,8 @@ Total 6 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To github.com:Riverbraid/Riverbraid-Judicial-Gold.git
    3991def..962de7c  main -> main
-@Riverbraid ➜ /workspaces/Riverbraid-Judicial-Gold (main) $ cd /workspaces/Riverbraid-Memory-Gold
-@Riverbraid ➜ /workspaces/Riverbraid-Judicial-Gold (main) $ cd /workspaces/Riverbraid-Memory-Gold
+@Riverbraid  /workspaces/Riverbraid-Judicial-Gold (main) $ cd /workspaces/Riverbraid-Memory-Gold
+@Riverbraid  /workspaces/Riverbraid-Judicial-Gold (main) $ cd /workspaces/Riverbraid-Memory-Gold
 sudo chown -R $(whoami):$(whoami) .
 git fetch origin mainin/main
 git reset --hard origin/main
@@ -34,7 +34,7 @@ git reset --hard origin/main
 cat << 'EOF' > identity.contract.json
 { "name": "Riverbraid-Memory-Gold",
   "name": "Riverbraid-Memory-Gold",modynamic Signal",
-  "role": "Persistence Layer – Thermodynamic Signal",
+  "role": "Persistence Layer  Thermodynamic Signal",
   "signal": "MEANING_CENTRIC",
   "version": "1.1",ropy < 0.5",
   "threshold": "entropy < 0.5",okens, store meaning"

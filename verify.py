@@ -18,4 +18,4 @@ if not os.path.exists(anchor_file):
 else:
     with open(anchor_file, 'r') as f: ex = f.read().strip()
     if compute_anchor(state) != ex: print("DRIFT_DETECTED"); sys.exit(1)
-print("[Signal: — | Braid: CLOSED-LOOP]")
+print("[Signal:  | Braid: CLOSED-LOOP]")

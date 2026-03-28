@@ -7,7 +7,7 @@ Merkle Root: de2062
 
 ### Verification Gate Summary:
 - CODE_OF_CONDUCT: Standardized
-- McLean σ Anchor: Permanent
+- McLean  Anchor: Permanent
 - Runtime Debris: Purged
 - Architecture Stubs: Localized
 - CI/CD Verification: Active
