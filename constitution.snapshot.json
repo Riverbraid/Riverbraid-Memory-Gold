@@ -1,0 +1,165 @@
+{
+  "sha256": "4923cd4845401a5dedb3453d572a7af1762efaca5f1b21abcc0602bb098ea834",
+  "files": [
+    {
+      "file": ".anchor",
+      "hash": "72c6c7b56f4b316e28ca96568ea48d6cfdce6ec0ea20a7e72048378a52225323"
+    },
+    {
+      "file": ".github/workflows/integrity.yml",
+      "hash": "cb7277ac89cbfee9e6c39407b2da8c6c4f6fb176e403916ec7388d4bd8e597ad"
+    },
+    {
+      "file": ".github/workflows/merkle-verify.yml",
+      "hash": "e67ccd18b8f7672be022dfccdddf115c694dec327e4a1d83d58436013c448af4"
+    },
+    {
+      "file": ".gitignore",
+      "hash": "4d56952b0fb13bf8f9b6c13a6d4c34a075bac3af447636a1df4335d7576e2f97"
+    },
+    {
+      "file": ".nvmrc",
+      "hash": "1d57b0b9ecdc8c2f5bc0b6844ea2173d6530996998aed3fadaecb54766bb9585"
+    },
+    {
+      "file": ".stationary_state",
+      "hash": "e8b1a559cef058f7edd3d00526de7db13e7d520c4ffa925ea964f25a23a829e8"
+    },
+    {
+      "file": "ARCHITECTURE.md",
+      "hash": "89753b5b206f28df688cf3efcecd5426203d86ce1b63142789e6b5f4c21e0bbd"
+    },
+    {
+      "file": "BUILD-MANIFEST-v1.1.md",
+      "hash": "946d29114d3a1b96e33dc0a6eaaa20d1f959ebbda8b1e73a092afab8131a9610"
+    },
+    {
+      "file": "CLUSTER_MANIFEST.state",
+      "hash": "f2df6337e90a6a0c6eb6f7db890a847b363ff89edae7bea42203c5c4217733e2"
+    },
+    {
+      "file": "CODE_OF_CONDUCT.md",
+      "hash": "31511dd391bb26e3846c8fe022a3de3f6028000902179a70354a3a2cabe03cc5"
+    },
+    {
+      "file": "CONTRIBUTING.md",
+      "hash": "07405dbc138db10717dd98fe43b8048937799194d363b4468335a2286ef71f72"
+    },
+    {
+      "file": "LICENSE",
+      "hash": "4e3d6c1ae6af4c3edca13ac3a4425c2187a543b35f3dd4eed0d634e9060b92d8"
+    },
+    {
+      "file": "MANIFEST.SEAL.sha256",
+      "hash": "e760bed42b6c8369ce259f57271755d75faf2e5607d34464e82e8b21b9292f3f"
+    },
+    {
+      "file": "README.md",
+      "hash": "c7dba1c579dc3b7d1c8c28099a6b99c0b6a25fdf103382fc946e0187cf94bc17"
+    },
+    {
+      "file": "SECURITY.md",
+      "hash": "f659baddc79752219b3128b2cef6fbb25616cea779c72e91ab15a09ceae00638"
+    },
+    {
+      "file": "SPEC.md",
+      "hash": "8b2becbb6603d15d0ebfb41259776cd0b453a70ad69b53e2c22136885dafc23b"
+    },
+    {
+      "file": "TRUTH.SEAL.sha256",
+      "hash": "469dbdc193b5198678f90f88226f3ab8a23513b5713ab940a17e4e21565ef210"
+    },
+    {
+      "file": "TRUTH.md",
+      "hash": "22f94c8680672ac9a2c45049a18e5a921a761c6bbc353ec4810f8662f524b447"
+    },
+    {
+      "file": "__init__.py",
+      "hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "file": "bin/gate.mjs",
+      "hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "file": "bin/heartbeat.mjs",
+      "hash": "c0bc8656b364ee5d0535aa09c6fc959c8ea8b0dadfbd7571ad1b2ddab772fe31"
+    },
+    {
+      "file": "bin/run-vectors.cjs",
+      "hash": "8e4bb628e831e04c0e2816dc12fd529b525a8de5923ce2e1ff9f1b2f7d9c501a"
+    },
+    {
+      "file": "cognitive-architecture.json",
+      "hash": "72bad017e5598f7b0acc9819c7753e549e882a5238861fbc602d785d93f13698"
+    },
+    {
+      "file": "gate.mjs",
+      "hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "file": "heartbeat.mjs",
+      "hash": "c0bc8656b364ee5d0535aa09c6fc959c8ea8b0dadfbd7571ad1b2ddab772fe31"
+    },
+    {
+      "file": "identity.contract.json",
+      "hash": "c86fba4f8ad36594b6d776077b36a5e3a5fb7f22c1f5648268afd4ccd41eea90"
+    },
+    {
+      "file": "index.js",
+      "hash": "2a8f87165acf3d1d786ab49e66c52398fa61b9b64824977c6c9909c9b99b4e8c"
+    },
+    {
+      "file": "memory.py",
+      "hash": "8507ba029615d770d6b6b8da29255484ef0a9ef56e5dbede19a86e016c21fb0d"
+    },
+    {
+      "file": "memory.state",
+      "hash": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    {
+      "file": "package.json",
+      "hash": "fc966d8747752cab085fbdc46115f23cfa43e4f87ea24ff87e8fcf0019014b13"
+    },
+    {
+      "file": "protocol.steps",
+      "hash": "89610639077c120738ab4739c6eac30059b672b111eb48c1f268b47d8f9884eb"
+    },
+    {
+      "file": "run-vectors.cjs",
+      "hash": "0918f7b1142d021aefafa973a1cd7dd4f881df27636b00d2d0b53379ac245c07"
+    },
+    {
+      "file": "src/judge.mjs",
+      "hash": "68dfd89c40acbea4750c98841fbac73fc1aeee6bf6772f2bbad7670449fafe6b"
+    },
+    {
+      "file": "src/memory.mjs",
+      "hash": "4482bc135f25bdcce88d2058f682f3bd9b8c440c431f1b0255d974561e2120e5"
+    },
+    {
+      "file": "src/memory.mjsnal",
+      "hash": "f0751cfec876668535a8cdd1c615c706ae94e571766386e2188d09a7956d36d8"
+    },
+    {
+      "file": "tests/.keep",
+      "hash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "file": "tests/signal.test.js",
+      "hash": "ef062336579f88d0afa9a1fabd29c32bf0a07994aa30e5cbfde7dacd258202a7"
+    },
+    {
+      "file": "vectors/stationary.json",
+      "hash": "90b2369d0d1efdb22d84b3e8155df7e5ea4bb5d766ba3b737a72b3b7ec7fbe62"
+    },
+    {
+      "file": "verify.mjs",
+      "hash": "575fcb09655ab78d37d5ebe8d83181e09195e8df4ce34c6f4b6259a705dc8437"
+    },
+    {
+      "file": "verify.py",
+      "hash": "adc8b4ae882d232d7fc199cbc66a58c2d081b9ffb00fb14cf97540432ba24a6c"
+    }
+  ]
+}

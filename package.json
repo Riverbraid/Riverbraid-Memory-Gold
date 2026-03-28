@@ -1,6 +1,13 @@
 {
-  "name": "riverbraid-memory-gold",
-  "version": "1.3.0",
+  "name": "riverbraid-node",
+  "version": "1.5.0",
+  "private": true,
   "type": "module",
-  "scripts": { "verify": "node verify.mjs" }
+  "scripts": {
+    "snapshot": "node bin/run-vectors.cjs snapshot",
+    "verify": "node bin/run-vectors.cjs verify"
+  },
+  "engines": {
+    "node": "20.11.0"
+  }
 }
