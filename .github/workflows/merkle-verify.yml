@@ -1,0 +1,21 @@
+name: Merkle Verification
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify TRUTH.SEAL (all governed file hashes)
+        run: |
+          test -f TRUTH.SEAL.sha256
+          sha256sum -c TRUTH.SEAL.sha256
+
+      - name: Verify MANIFEST.SEAL (manifest hash)
+        run: |
+          test -f MANIFEST.SEAL.sha256
+          sha256sum -c MANIFEST.SEAL.sha256

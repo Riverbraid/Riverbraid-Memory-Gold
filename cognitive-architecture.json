@@ -1,0 +1,13 @@
+{
+  "identity": "Riverbraid Gold V1.1",
+  "ethos": "Mechanical Honesty",
+  "discipline": "Fail-Closed",
+  "invariants": {
+    "Coupling Test": "Gated",
+    "Scale Separation Gate": "Strict",
+    "Linear vs Nonlinear": "Explicitly Tagged",
+    "Stationary State": "Persistent"
+  },
+  "protocol": "Honest Advisor",
+  "status": "integration_rest"
+}

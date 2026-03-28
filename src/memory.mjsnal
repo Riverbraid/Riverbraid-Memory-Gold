@@ -1,0 +1,7 @@
+// Riverbraid-Memory-Gold – Thermodynamic Signal
+// 7-bit ASCII only.
+export const shouldPersist = (entropy) => {
+export const shouldPersist = (entropy) => {
+  const THRESHOLD = 0.5;HOLD;
+  return entropy < THRESHOLD;
+};F
