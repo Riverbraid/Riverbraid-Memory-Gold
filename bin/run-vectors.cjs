@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+const expectedNodeVersion = "20.11.0";
+if (process.version.slice(1) !== expectedNodeVersion) {
+  console.error(`FATAL: Node version mismatch. Expected ${expectedNodeVersion}, got ${process.version.slice(1)}`);
+  process.exit(1);
+}
+
 const crypto = require("crypto");
 const fs = require("fs");
 const path = require("path");
