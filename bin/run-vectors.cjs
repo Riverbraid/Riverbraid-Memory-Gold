@@ -7,21 +7,30 @@ const ROOT = process.cwd();
 function getSnapshot(dir = ROOT) {
   const files = [];
   function walk(current) {
-    const relativeFromRoot = path.relative(ROOT, current);
-    if (relativeFromRoot.startsWith('..')) return;
-
-    if (!fs.existsSync(current)) return;
+    const resolved = path.resolve(current);
     
-    fs.readdirSync(current, { withFileTypes: true }).forEach(entry => {
-      const full = path.join(current, entry.name);
-      if (entry.name === '.git' || entry.name === 'node_modules' || entry.name === 'constitution.snapshot.json') return;
+    // INVARIANT: Absolute Path Containment
+    if (!resolved.startsWith(ROOT)) return;
+    if (!fs.existsSync(resolved)) return;
+
+    const entries = fs.readdirSync(resolved, { withFileTypes: true });
+    for (const entry of entries) {
+      const full = path.join(resolved, entry.name);
+
+      // EXCLUSIONS
+      if (
+        entry.name === '.git' || 
+        entry.name === 'node_modules' || 
+        entry.name === '.codespaces' || 
+        entry.name === 'constitution.snapshot.json'
+      ) continue;
 
       if (entry.isDirectory()) {
         walk(full);
       } else if (entry.isFile()) {
         files.push(full);
       }
-    });
+    }
   }
   walk(dir);
   return files.sort();
