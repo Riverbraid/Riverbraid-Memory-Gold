@@ -1,11 +1,15 @@
-# Riverbraid-$petal
-**Part of the Riverbraid 10-Petal Cluster**
-- **Merkle Root:** de2062
-- **Status:** Stationary / Fail-Closed
+# Riverbraid Memory Gold
 
-## The Braid
-- [Core](https://github.com/Riverbraid/Riverbraid-Core) | [Cognition](https://github.com/Riverbraid/Riverbraid-Cognition)
-- [Golds](https://github.com/Riverbraid/Riverbraid-Golds) (Governance Hub)
+Signal gated persistence surface for the Riverbraid system.
 
-## Invariants
-Refer to [SPEC.md](./SPEC.md) for the Thermodynamic Signals and Coupling Tests.
+## Purpose
+This repository is part of the Riverbraid cluster and exposes a repo specific verification and governance surface.
+
+## Verification
+Canonical verifier: `bin/run-vectors.cjs`
+Primary command: `node bin/run-vectors.cjs verify`
+
+## Status
+Version: `1.5.0`
+State: `Stationary / Fail Closed`
+Merkle Root: `de2062`

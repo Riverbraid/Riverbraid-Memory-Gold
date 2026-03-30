@@ -1,5 +1,5 @@
 {
-  "name": "riverbraid-node",
+  "name": "riverbraid-memory-gold",
   "version": "1.5.0",
   "private": true,
   "type": "module",
@@ -9,5 +9,6 @@
   },
   "engines": {
     "node": "20.11.0"
-  }
+  },
+  "description": "Signal gated persistence surface for the Riverbraid system."
 }
