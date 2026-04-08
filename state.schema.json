@@ -1,0 +1,5 @@
+{
+  "deadlock_count": "integer",
+  "last_deadlock_step": "integer",
+  "tier_active": "integer"
+}
