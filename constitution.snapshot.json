@@ -1,3 +1,122 @@
-{
-  "sha256": "77c8b28ddcd940e7a1796cf436ee0c5dab80287791deac5b17e05683fc4995c8"
-}
+[
+  {
+    "file": ".anchor"
+  },
+  {
+    "file": ".gitattributes"
+  },
+  {
+    "file": ".github/workflows/integrity.yml"
+  },
+  {
+    "file": ".github/workflows/merkle-verify.yml"
+  },
+  {
+    "file": ".gitignore"
+  },
+  {
+    "file": ".nvmrc"
+  },
+  {
+    "file": ".stationary_state"
+  },
+  {
+    "file": "ARCHITECTURE.md"
+  },
+  {
+    "file": "BUILD-MANIFEST-v1.1.md"
+  },
+  {
+    "file": "CLUSTER_MANIFEST.state"
+  },
+  {
+    "file": "CODE_OF_CONDUCT.md"
+  },
+  {
+    "file": "CONTRIBUTING.md"
+  },
+  {
+    "file": "LICENSE"
+  },
+  {
+    "file": "MANIFEST.SEAL.sha256"
+  },
+  {
+    "file": "README.md"
+  },
+  {
+    "file": "SECURITY.md"
+  },
+  {
+    "file": "SOVEREIGN-ENVIRONMENT.md"
+  },
+  {
+    "file": "SPEC.md"
+  },
+  {
+    "file": "TRUTH.SEAL.sha256"
+  },
+  {
+    "file": "TRUTH.md"
+  },
+  {
+    "file": "__init__.py"
+  },
+  {
+    "file": "append-log.cjs"
+  },
+  {
+    "file": "bin/gate.mjs"
+  },
+  {
+    "file": "bin/heartbeat.mjs"
+  },
+  {
+    "file": "bin/run-vectors.cjs"
+  },
+  {
+    "file": "constitution.snapshot.json.asc"
+  },
+  {
+    "file": "index.js"
+  },
+  {
+    "file": "memory.py"
+  },
+  {
+    "file": "memory.state"
+  },
+  {
+    "file": "protocol.steps"
+  },
+  {
+    "file": "run-vectors.cjs"
+  },
+  {
+    "file": "src/judge.mjs"
+  },
+  {
+    "file": "src/memory.mjs"
+  },
+  {
+    "file": "src/memory.mjsnal"
+  },
+  {
+    "file": "swarm.ledger.jsonl"
+  },
+  {
+    "file": "swarm_anchor.txt"
+  },
+  {
+    "file": "tests/.keep"
+  },
+  {
+    "file": "tests/signal.test.js"
+  },
+  {
+    "file": "verify.mjs"
+  },
+  {
+    "file": "verify.py"
+  }
+]
