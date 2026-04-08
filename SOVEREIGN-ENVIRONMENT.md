@@ -1,4 +1,4 @@
-# Sovereign Environment — Riverbraid Protocol
+# Sovereign Environment  Riverbraid Protocol
 
 Riverbraid has transitioned from isolated repositories to a **Sovereign Environment** protected by three pillars:
 
