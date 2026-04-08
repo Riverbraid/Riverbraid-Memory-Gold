@@ -1,51 +1,48 @@
 const fs = require('fs');
 const path = require('path');
-const cp = require('child_process');
 
-const checkFloor = (buf, label) => {
-    for (let i = 0; i < buf.length; i++) {
-        const b = buf[i];
-        if (!(b === 9 || b === 10 || b === 13 || (b >= 32 && b <= 126))) {
-            throw new Error(`ILLEGAL_BYTE:${label}:${i}`);
-        }
-    }
+const checkFloor = (label, buf) => {
+  if (buf.length === 0 || buf[buf.length - 1] !== 0x0a) throw new Error(`LF_VIOLATION:${label}`);
+  for (let i = 0; i < buf.length; i++) {
+    const b = buf[i];
+    if ((b < 32 && b !== 9 && b !== 10 && b !== 13) || b > 126) throw new Error(`ILLEGAL_BYTE:${label}:${i}`);
+  }
 };
 
-const walk = (dir, files = []) => {
-    fs.readdirSync(dir).forEach(f => {
-        const p = path.join(dir, f);
-        if (f === '.git' || f === 'node_modules' || f.endsWith('.json')) return;
-        if (fs.statSync(p).isDirectory()) walk(p, files);
-        else files.push(p);
+const getSnapshot = (root) => {
+  const snapshot = {};
+  const walk = (dir) => {
+    fs.readdirSync(dir).forEach(name => {
+      const fullPath = path.join(dir, name);
+      const stats = fs.statSync(fullPath);
+      const label = path.relative(root, fullPath);
+
+      // SCOPE GATE: Ignore hidden files, assets, and node_modules
+      if (name.startsWith('.') || name === 'assets' || name === 'node_modules' || name === 'dist') return;
+
+      if (stats.isDirectory()) {
+        walk(fullPath);
+      } else {
+        // EXTENSION GATE: Only check text-based source/config files
+        if (!label.match(/\.(cjs|json|md|txt|js|yaml|yml)$/)) return;
+        const buf = fs.readFileSync(fullPath);
+        checkFloor(label, buf);
+        snapshot[label] = buf.toString('hex');
+      }
     });
-    return files;
+  };
+  walk(root);
+  return snapshot;
 };
 
 const cmd = process.argv[2];
-const root = process.cwd();
-
-switch (cmd) {
-    case 'snapshot':
-        const manifest = walk(root).sort().map(f => {
-            const buf = fs.readFileSync(f);
-            checkFloor(buf, path.relative(root, f));
-            return { file: path.relative(root, f), hash: b => b.toString('hex') }; // Simplified for recovery
-        });
-        fs.writeFileSync('constitution.snapshot.json', JSON.stringify(manifest, null, 2));
-        console.log('Snapshot written.');
-        break;
-
-    case 'sign':
-        console.log('Signing snapshot...');
-        cp.execSync('gpg --clear-sign --yes constitution.snapshot.json', { stdio: 'inherit' });
-        break;
-
-    case 'verify':
-        console.log('Verifying integrity...');
-        // Logic for cross-check
-        break;
-
-    default:
-        console.log('Usage: node run-vectors.cjs [snapshot|sign|verify]');
-        process.exit(1);
+if (cmd === 'snapshot') {
+  const snap = getSnapshot(process.cwd());
+  fs.writeFileSync('constitution.snapshot.json', JSON.stringify(snap, null, 2) + '\n');
+  console.log('Snapshot written.');
+} else if (cmd === 'verify') {
+  const current = getSnapshot(process.cwd());
+  const saved = JSON.parse(fs.readFileSync('constitution.snapshot.json', 'utf8'));
+  if (JSON.stringify(current) !== JSON.stringify(saved)) throw new Error('INTEGRITY_DRIFT');
+  console.log('[OK] Byte-floor clean.');
 }
