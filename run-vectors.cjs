@@ -12,19 +12,19 @@ const checkFloor = (label, buf) => {
 const getSnapshot = (root) => {
   const snapshot = {};
   const walk = (dir) => {
-    fs.readdirSync(dir).forEach(name => {
+    const files = fs.readdirSync(dir).sort();
+    files.forEach(name => {
       const fullPath = path.join(dir, name);
       const stats = fs.statSync(fullPath);
       const label = path.relative(root, fullPath);
 
-      // SCOPE GATE: Ignore hidden files, assets, and node_modules
       if (name.startsWith('.') || name === 'assets' || name === 'node_modules' || name === 'dist') return;
 
       if (stats.isDirectory()) {
         walk(fullPath);
       } else {
-        // EXTENSION GATE: Only check text-based source/config files
         if (!label.match(/\.(cjs|json|md|txt|js|yaml|yml)$/)) return;
+        if (label === 'constitution.snapshot.json') return; // Don't snapshot the snapshot
         const buf = fs.readFileSync(fullPath);
         checkFloor(label, buf);
         snapshot[label] = buf.toString('hex');
@@ -36,13 +36,23 @@ const getSnapshot = (root) => {
 };
 
 const cmd = process.argv[2];
+const SNAPSHOT_FILE = 'constitution.snapshot.json';
+
 if (cmd === 'snapshot') {
   const snap = getSnapshot(process.cwd());
-  fs.writeFileSync('constitution.snapshot.json', JSON.stringify(snap, null, 2) + '\n');
+  const output = JSON.stringify(snap, Object.keys(snap).sort(), 2) + '\n';
+  fs.writeFileSync(SNAPSHOT_FILE, output);
   console.log('Snapshot written.');
 } else if (cmd === 'verify') {
   const current = getSnapshot(process.cwd());
-  const saved = JSON.parse(fs.readFileSync('constitution.snapshot.json', 'utf8'));
-  if (JSON.stringify(current) !== JSON.stringify(saved)) throw new Error('INTEGRITY_DRIFT');
+  const saved = JSON.parse(fs.readFileSync(SNAPSHOT_FILE, 'utf8'));
+  
+  const currentStr = JSON.stringify(current, Object.keys(current).sort(), 2);
+  const savedStr = JSON.stringify(saved, Object.keys(saved).sort(), 2);
+  
+  if (currentStr !== savedStr) {
+    console.error('INTEGRITY_DRIFT DETECTED');
+    process.exit(1);
+  }
   console.log('[OK] Byte-floor clean.');
 }
