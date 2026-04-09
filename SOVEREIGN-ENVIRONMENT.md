@@ -16,4 +16,4 @@ Riverbraid has transitioned from isolated repositories to a **Sovereign Environm
 - Memory Ledger: Tamper-evident .jsonl record of every success and refusal.
 
 **Current Merkle Root:** adef13  
-**Stationary Floor:** v1.5.0-Genesis (de2062) remains the immutable base.
+**Stationary Floor:** v1.5.0-Genesis (d4935e) remains the immutable base.
