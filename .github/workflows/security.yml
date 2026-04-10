@@ -4,7 +4,6 @@ on:
     branches: [ main ]
   schedule:
     - cron: '0 0 * * *'
-
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -26,7 +25,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Ban Insecure RNG
-        run: ! grep -r "Math.random" . --include="*.js"
-      - name: Ban Broken Hashes
-        run: ! grep -riE "md5|sha1" . --include="*.js"
+      - name: Ban Insecure RNG (Math.random)
+        run: |
+          if grep -r "Math.random" . --include="*.js" --include="*.cjs" --include="*.mjs"; then
+            echo "❌ Insecure Math.random() detected — Riverbraid must remain deterministic and stationary."
+            exit 1
+          fi
+      - name: Ban Broken Hashes (MD5 / SHA1)
+        run: |
+          if grep -riE "md5|sha1" . --include="*.js" --include="*.cjs" --include="*.mjs"; then
+            echo "❌ Broken hash (MD5 or SHA1) detected — only cryptographically secure primitives allowed."
+            exit 1
+          fi
