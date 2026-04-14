@@ -1,14 +1,14 @@
 #!/bin/sh
 set -e
-echo "--- Riverbraid Structural Integrity Check ---"
-# Check for CRLF
+echo "--- Riverbraid Integrity Check ---"
 if find . -type f \( -name "*.json" -o -name "*.cjs" -o -name "*.sh" \) | xargs file | grep -q "CRLF"; then
   echo "❌ ERR: DIRTY_BYTES_DETECTED"; exit 1
 fi
-# Re-generate the stationary manifest
-find . -maxdepth 2 -not -path '*/.*' -type f ! -name "SHA256SUMS" | sort | xargs sha256sum > SHA256SUMS.tmp
-mv SHA256SUMS.tmp SHA256SUMS
-# Verify
-sha256sum -c --strict SHA256SUMS
-if [ -f "cluster-manifest.json.asc" ]; then gpg --verify cluster-manifest.json.asc; fi
+if [ ! -f "SHA256SUMS" ]; then
+  echo "⚠️  No SHA256SUMS (skipping strict verification)"; exit 0
+fi
+sha256sum -c SHA256SUMS --quiet || { echo "❌ ERR: HASH_MISMATCH"; exit 1; }
+if [ -f "MERKLE_ROOT" ]; then
+  /workspaces/verify-merkle.sh || exit 1
+fi
 echo "✅ PASS"
