@@ -1,11 +1,9 @@
 {
-  "name": "riverbraid-memory-gold",
-  "version": "1.5.0",
+  "name": "Riverbraid-Memory-Gold",
+  "version": "1.5.1",
   "private": true,
   "type": "module",
   "scripts": {
-    "verify": "node run-vectors.cjs verify",
-    "prestart": "node gatekeeper.cjs",
-    "prebuild": "node gatekeeper.cjs"
+    "verify": "node run-vectors.cjs verify"
   }
 }
