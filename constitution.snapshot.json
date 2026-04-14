@@ -1,9 +1,5 @@
 {
-  "version": "1.0.0",
-  "files": [
-    {
-      "path": "constitution.threshold.json",
-      "sha256": "49481309380f2f0d442438d131c44fb39bb149789f1615c55d8c8713cd026632"
-    }
-  ]
+  "version": "1.5.1",
+  "status": "stationary",
+  "integrity": "8f857fab8b2f55a703e71e6562e701117c640f3205a00da0529dc45c42468090"
 }
