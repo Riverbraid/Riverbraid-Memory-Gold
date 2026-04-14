@@ -3,7 +3,5 @@
   "version": "1.5.1",
   "private": true,
   "type": "module",
-  "scripts": {
-    "verify": "node run-vectors.cjs verify"
-  }
+  "scripts": { "verify": "node run-vectors.cjs verify" }
 }
