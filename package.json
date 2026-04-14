@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "verify": "node run-vectors.cjs verify"
+    "verify": "node run-vectors.cjs verify",
+    "prestart": "node gatekeeper.js",
+    "prebuild": "node gatekeeper.js"
   }
 }
