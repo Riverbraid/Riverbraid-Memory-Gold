@@ -1,6 +1,3 @@
-// Riverbraid-Interface-Gold/src/runtime-binding.js
-// FINAL TIGHT RUNTIME COUPLING — CI-safe GPG check
-
 const path = require('path');
 const fs = require('fs');
 const { execSync } = require('child_process');
@@ -12,7 +9,7 @@ const { verifySwarm, getCurrentRoot } = require(verifyPath);
 const shield = require(shieldPath);
 
 function enforceCoreValidator(context) {
-  const root = getCurrentRoot(); // must be 01a777
+  const root = getCurrentRoot();
 
   const anchorPath = path.join(process.cwd(), '.anchor');
   const sigPath = path.join(process.cwd(), '.anchor.asc');
@@ -22,17 +19,16 @@ function enforceCoreValidator(context) {
     process.exit(1);
   }
 
-  // CI-SAFE GPG CHECK: Skip if running in GitHub Actions
+  // CI-SAFE GPG CHECK
   if (process.env.CI !== 'true') {
     try {
       execSync(`gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
-      console.log(`✅ ${context}: GPG signature verified`);
     } catch (e) {
       console.error(`❌ ${context}: GPG signature verification failed`);
       process.exit(1);
     }
   } else {
-    console.log(`ℹ️ ${context}: GPG verification skipped in CI (trusted runner)`);
+    console.log(`ℹ️ ${context}: GPG verification skipped in CI`);
   }
 
   const anchoredRoot = fs.readFileSync(anchorPath, 'utf8').trim();
@@ -63,7 +59,7 @@ function bindP5(p5Instance) {
     originalDraw.call(this);
   };
 
-  console.log("✅ p5.js fully coupled to Riverbraid-Core");
+  console.log("✅ p5.js fully coupled");
 }
 
 function bindHydra(hydraSynth) {
@@ -74,7 +70,7 @@ function bindHydra(hydraSynth) {
     return originalEval.call(this, code);
   };
 
-  console.log("✅ Hydra fully coupled to Riverbraid-Core");
+  console.log("✅ Hydra fully coupled");
 }
 
 module.exports = { bindP5, bindHydra, enforceCoreValidator };
