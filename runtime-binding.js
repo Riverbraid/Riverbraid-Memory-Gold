@@ -25,7 +25,7 @@ function enforceCoreValidator(context) {
   // CI-SAFE GPG CHECK: Skip if running in GitHub Actions
   if (process.env.CI !== 'true') {
     try {
-      execSync(`gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
+      execSync(`if [ "$CI" != "true" ]; then gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
       console.log(`✅ ${context}: GPG signature verified`);
     } catch (e) {
       console.error(`❌ ${context}: GPG signature verification failed`);

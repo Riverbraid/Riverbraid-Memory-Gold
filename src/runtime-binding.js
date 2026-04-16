@@ -22,7 +22,7 @@ function enforceCoreValidator(context) {
   // CI-SAFE GPG CHECK
   if (process.env.CI !== 'true') {
     try {
-      execSync(`gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
+      execSync(`if [ "$CI" != "true" ]; then gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
     } catch (e) {
       console.error(`❌ ${context}: GPG signature verification failed`);
       process.exit(1);
