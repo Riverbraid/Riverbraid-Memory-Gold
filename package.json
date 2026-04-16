@@ -3,5 +3,13 @@
   "version": "1.5.1",
   "private": true,
   "type": "module",
-  "scripts": { "verify": "node run-vectors.cjs verify" }
+  "scripts": {
+    "verify": "node run-vectors.cjs verify",
+    "snapshot": "node run-vectors.cjs snapshot",
+    "test": "node run-vectors.cjs verify"
+  },
+  "engines": {
+    "node": "20.11.0",
+    "npm": "10.2.4"
+  }
 }
