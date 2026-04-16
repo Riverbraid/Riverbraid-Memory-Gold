@@ -19,10 +19,10 @@ function enforceCoreValidator(context) {
     process.exit(1);
   }
 
-  // CI-SAFE GPG CHECK
+  // CI-SAFE: Skip GPG verification in GitHub Actions
   if (process.env.CI !== 'true') {
     try {
-      execSync(`if [ "$CI" != "true" ]; then gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
+      execSync(`gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
     } catch (e) {
       console.error(`❌ ${context}: GPG signature verification failed`);
       process.exit(1);
