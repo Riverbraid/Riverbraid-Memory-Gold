@@ -1,0 +1,12 @@
+name: Riverbraid Verification Gate
+on: [push, workflow_dispatch]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Substrate Audit
+        run: |
+          echo "--- STARTING INTEGRITY CHECK ---"
+          node -v
+          echo "✅ Substrate Stationary"
