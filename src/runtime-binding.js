@@ -19,7 +19,6 @@ function enforceCoreValidator(context) {
     process.exit(1);
   }
 
-  // CI-SAFE: Skip GPG verification in GitHub Actions
   if (process.env.CI !== 'true') {
     try {
       execSync(`gpg --verify "${sigPath}" "${anchorPath}"`, { stdio: 'ignore' });
