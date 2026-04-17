@@ -1,0 +1,6 @@
+{
+  "authority": "Riverbraid-Core",
+  "binding_version": "1.5.0",
+  "root_anchor": "de20625f9b8c7d1e8ec84f6d8f86d9f4f2b083a4",
+  "governance_mode": "fail-closed"
+}
