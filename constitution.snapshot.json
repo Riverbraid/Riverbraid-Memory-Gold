@@ -1,7 +1,56 @@
 {
-  "constitution.snapshot.json": "7db4b1012215cff53889d2cc0eed45aad60679ed5d61b4f8b5985686cb0c865b",
-  "constitution.threshold.json": "6bd1b1e2adfadaa56923ffadfe2fa3a68071b69461ba783a1d718db97e1c5312",
-  "current_state.tmp": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-  "package.json": "ff93a3dbf48088472418345fd74cc393db0872f76c5b76ca9875e1f0719ebdf7",
-  "run-vectors.cjs": "1acb0fc35fd2c22c1c07b3f33564edc529a3a9b725f06988721316c2cad12806"
+  "version": "1.5.0",
+  "merkle_root": "4b1e2bbb506db0d89c526cdf8f1a08c2851aefeafa71d7054012e1a7ac8f7700",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "sha256": "daf0f369b25356b2217989eebc4dad24f6681376a07e1a6ac2a8799a13b02bc6",
+      "leaf": "60c255621a965ddd35fecaccd4cf07b877e73287f6598867373259d17cbf8a8f"
+    },
+    {
+      "path": ".stationary-pulse",
+      "sha256": "d37d5bbf70f5cac7e44b406bdd63db5cc54318f26de09d758510c5bdc7c76310",
+      "leaf": "7151bd0cb04bc85506ab2ffc2f9ea549ceb07bb8549ccd8ce573dd341713b951"
+    },
+    {
+      "path": ".stationary-seal",
+      "sha256": "df48de2fb69bb42f3fe91e56141328d2bcf6930ee35bdb15d9d3ebe6f8d5b04e",
+      "leaf": "d4e6e8c854bea2882873c14113aad59b837bbf4cc3e86b2e2302a4b1c79c7056"
+    },
+    {
+      "path": "constitution.threshold.json",
+      "sha256": "6bd1b1e2adfadaa56923ffadfe2fa3a68071b69461ba783a1d718db97e1c5312",
+      "leaf": "5e958c9932578162ea25063bb0bd99e4d8f8173249953859b6ef3951cfa557de"
+    },
+    {
+      "path": "package.json",
+      "sha256": "dd0b9a1b14502a14a3269e6add1df1fc4c5fac67f5120db758e8fb5b1becff08",
+      "leaf": "3c3cc0b4ca765db063019182f6a97263ae8603014165c907d0890bb0ae7d96df"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f20d04d5eeb6dd6942ab55ae9f354e3674c90d4abe173244ca47282a3fa3f940",
+      "leaf": "cc79753a59081a33f79619f20270e9de50fe4a13a11d5014cbf6c841bdcbb234"
+    },
+    {
+      "path": "run-vectors.cjs",
+      "sha256": "dacac55fa4846267c962d0e5a46d2ba3d81a40de7cd544cd25751407e788c818",
+      "leaf": "e448a8e65fd67fa0cbdbd24c67ce708edbf83bbd817e1ce9a5912f874e6e0458"
+    },
+    {
+      "path": "runtime-binding.js",
+      "sha256": "48af65e5850d2181355f2422bc304118e7b2f60f987f8172cb7410411306227d",
+      "leaf": "94ca56786a0bbecec7c7e22a0fc6be016f749aa9194256eb7e717e3344d0affd"
+    },
+    {
+      "path": "src/runtime-binding.js",
+      "sha256": "8de3e5ced820568cb5434cbd3536318451e5c49a1decf3cbabe9952a2205d96a",
+      "leaf": "f887454afd8e5ec5417b6109511f9f6c6b6eb86d185047274ccebe2ed94ce1b2"
+    },
+    {
+      "path": "TRUTH.SEAL",
+      "sha256": "8ef845d78acd75b2ead5b6da89857630336ce27c65e30b259d895dc92f27f64f",
+      "leaf": "945e930d1625fd684e814d1d1b5b99593927dba615bfef21ae401d252797302f"
+    }
+  ]
 }
