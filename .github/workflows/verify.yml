@@ -1,26 +1,27 @@
 name: verify
+
 on:
   push:
     branches: [main]
   pull_request:
-    branches: [main]
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   verify:
-    runs-on: ubuntu-24.04
-    env:
-      TZ: UTC
-      LC_ALL: C.UTF-8
-      LANG: C.UTF-8
-      NO_COLOR: "1"
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20.11.0
-          cache: npm
-      - name: Install
-        run: npm ci
-      - name: Verify
-        run: npm test
+          node-version: '24.11.1'
+
+      - run: |
+          if [ -f package-lock.json ]; then
+            npm install --package-lock-only
+          fi
+
+      - run: node run-vectors.cjs verify
