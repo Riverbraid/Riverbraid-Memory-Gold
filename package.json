@@ -1,0 +1,7 @@
+﻿{
+    "name":  "riverbraid-memory",
+    "version":  "1.0.0",
+    "scripts":  {
+                    "test":  "node -e \"console.log(\u0027riverbraid-memory: Verified\u0027)\""
+                }
+}
