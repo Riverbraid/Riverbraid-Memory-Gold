@@ -1,8 +1,8 @@
-﻿{
-    "name":  "riverbraid-memory",
-    "version":  "1.0.0",
-    "scripts":  {
-                    "test":  "npm run verify:feature-flow \u0026\u0026 node -e \"console.log(\u0027riverbraid-memory: Verified\u0027)\"",
-                    "verify:feature-flow":  "node verify-feature-flow.cjs"
-                }
+{
+  "name": "riverbraid-memory",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "npm run verify:feature-flow",
+    "verify:feature-flow": "node verify-feature-flow.cjs"
+  }
 }
