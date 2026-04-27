@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "repo": "Riverbraid-Memory-Gold",
+  "current_change": {
+    "id": "riverbraid-memory-gold-gate-v1",
+    "type": "linear",
+    "status": "active",
+    "requires_protocol_version_change": false,
+    "requires_vector_update": true,
+    "requires_release_gate": true
+  },
+  "allowed_types": ["linear", "nonlinear"],
+  "rules": {
+    "linear": { "meaning": "Additive...", "requires_protocol_version_change": false, "requires_vector_update": true, "requires_release_gate": true },
+    "nonlinear": { "meaning": "Structural...", "requires_protocol_version_change": true, "requires_vector_update": true, "requires_release_gate": true }
+  },
+  "cannot_mean": ["Linear does not mean unimportant.", "Nonlinear means protocol affecting..."]
+}
