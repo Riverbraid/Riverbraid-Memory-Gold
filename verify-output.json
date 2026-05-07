@@ -1,0 +1,13 @@
+{
+  "schema": "riverbraid.gold.verify.output",
+  "version": "1.0.0",
+  "repo": "Riverbraid-Memory-Gold",
+  "ring": 1,
+  "petal": "Memory-Gold",
+  "invariant": "MEMORY_SIGNAL_RATIO",
+  "status": "VERIFIED",
+  "result": 0.5,
+  "expected_result": 0.5,
+  "canonical_signal": "memory:RATIO_CALCULATED",
+  "canonical_reason": "Found 2 signals in 4 total items"
+}

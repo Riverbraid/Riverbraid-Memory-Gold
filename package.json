@@ -1,8 +1,12 @@
 {
-  "name": "riverbraid-memory",
+  "name": "@riverbraid/memory-gold",
   "version": "1.0.0",
+  "type": "module",
+  "description": "Riverbraid Gold petal for deterministic memory signal ratio verification.",
+  "main": "index.js",
   "scripts": {
-    "test": "npm run verify:feature-flow",
-    "verify:feature-flow": "node verify-feature-flow.cjs"
-  }
+    "verify": "node verify.mjs",
+    "test": "node verify.mjs"
+  },
+  "license": "MIT"
 }

@@ -1,0 +1,29 @@
+{
+  "schema": "riverbraid.gold.protocol.steps",
+  "version": "1.0.0",
+  "repo": "Riverbraid-Memory-Gold",
+  "ring": 1,
+  "petal": "Memory-Gold",
+  "invariant": "MEMORY_SIGNAL_RATIO",
+  "canonical_input": {
+    "store": ["signal_alpha", "noise", "signal_beta", "noise"],
+    "target_prefix": "signal_"
+  },
+  "expected_result": 0.5,
+  "steps": [
+    "receive canonical input object",
+    "filter store for items starting with target_prefix",
+    "calculate ratio of signal items to total store length",
+    "ensure floating point precision is deterministic",
+    "emit deterministic memory signal output"
+  ],
+  "forbidden": [
+    "Date",
+    "Math.random",
+    "randomUUID",
+    "timestamps",
+    "absolute paths",
+    "environment dependent values",
+    "external lookups"
+  ]
+}
