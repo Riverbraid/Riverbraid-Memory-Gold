@@ -8,5 +8,6 @@
     "verify": "node verify.mjs",
     "test": "node verify.mjs"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "private": true
 }

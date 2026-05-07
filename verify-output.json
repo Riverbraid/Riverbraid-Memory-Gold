@@ -4,10 +4,10 @@
   "repo": "Riverbraid-Memory-Gold",
   "ring": 1,
   "petal": "Memory-Gold",
-  "invariant": "MEMORY_SIGNAL_RATIO",
+  "invariant": "MEMORY_STATIONARY",
   "status": "VERIFIED",
-  "result": 0.5,
-  "expected_result": 0.5,
-  "canonical_signal": "memory:RATIO_CALCULATED",
-  "canonical_reason": "Found 2 signals in 4 total items"
+  "result": true,
+  "expected_result": true,
+  "canonical_signal": "memory-gold:STATIONARY",
+  "canonical_reason": "Stationary fields match declared petal identity"
 }

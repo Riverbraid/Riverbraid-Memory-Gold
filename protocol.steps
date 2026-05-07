@@ -4,18 +4,22 @@
   "repo": "Riverbraid-Memory-Gold",
   "ring": 1,
   "petal": "Memory-Gold",
-  "invariant": "MEMORY_SIGNAL_RATIO",
+  "invariant": "MEMORY_STATIONARY",
+  "claim_boundary": "declared-conditions-only",
   "canonical_input": {
-    "store": ["signal_alpha", "noise", "signal_beta", "noise"],
-    "target_prefix": "signal_"
+    "repo": "Riverbraid-Memory-Gold",
+    "petal": "Memory-Gold",
+    "ring": 1,
+    "invariant": "MEMORY_STATIONARY"
   },
-  "expected_result": 0.5,
+  "expected_result": true,
   "steps": [
-    "receive canonical input object",
-    "filter store for items starting with target_prefix",
-    "calculate ratio of signal items to total store length",
-    "ensure floating point precision is deterministic",
-    "emit deterministic memory signal output"
+    "receive canonical stationarity object",
+    "require repo to equal Riverbraid-Memory-Gold",
+    "require petal to equal Memory-Gold",
+    "require ring to equal 1",
+    "require invariant to equal MEMORY_STATIONARY",
+    "emit deterministic verification output"
   ],
   "forbidden": [
     "Date",
