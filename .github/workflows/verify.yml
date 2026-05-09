@@ -1,0 +1,36 @@
+name: Riverbraid Verification Gate
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.11.0'
+      - name: Install Dependencies
+        run: |
+          if [ -f package-lock.json ]; then
+            npm ci
+          else
+            echo "No package-lock.json found. Skipping dependency install."
+          fi
+      - name: Execute Riverbraid Verifier
+        run: |
+          if [ -f verify.mjs ]; then
+            node verify.mjs
+          elif [ -f package.json ] && grep -q '"verify":' package.json 2>/dev/null; then
+            npm run verify
+          elif [ -f package.json ] && grep -q '"test":' package.json 2>/dev/null; then
+            npm test
+          else
+            echo "Error: No standard verifier found."
+            exit 1
+          fi
