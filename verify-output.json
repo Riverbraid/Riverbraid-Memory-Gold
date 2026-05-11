@@ -1,13 +1,26 @@
 {
-  "schema": "riverbraid.gold.verify.output",
-  "version": "1.0.0",
-  "repo": "Riverbraid-Memory-Gold",
+  "status": "VERIFIED",
   "ring": 1,
   "petal": "Memory-Gold",
-  "invariant": "MEMORY_STATIONARY",
-  "status": "VERIFIED",
-  "result": true,
-  "expected_result": true,
-  "canonical_signal": "memory-gold:STATIONARY",
-  "canonical_reason": "Stationary fields match declared petal identity"
+  "invariant": "MEMORY_SIGNAL_RATIO",
+  "repo": "Riverbraid-Memory-Gold",
+  "vector_results": [
+    {
+      "name": "high_density_pass",
+      "pass": true,
+      "signal": "memory:COMMITTED:ratio=0.8750"
+    },
+    {
+      "name": "low_density_fail",
+      "pass": false,
+      "signal": "memory:LOW_DENSITY:ratio=0.1250"
+    },
+    {
+      "name": "empty_text_fail",
+      "pass": false,
+      "signal": "memory:INVALID"
+    }
+  ],
+  "buffer_depth": 1,
+  "note": "Pilot signal logic verified. Metadata-stub behavior rejected."
 }

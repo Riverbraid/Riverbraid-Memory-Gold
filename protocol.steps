@@ -1,33 +1,19 @@
 {
-  "schema": "riverbraid.gold.protocol.steps",
-  "version": "1.0.0",
-  "repo": "Riverbraid-Memory-Gold",
-  "ring": 1,
+  "invariant": "MEMORY_SIGNAL_RATIO",
   "petal": "Memory-Gold",
-  "invariant": "MEMORY_STATIONARY",
-  "claim_boundary": "declared-conditions-only",
-  "canonical_input": {
-    "repo": "Riverbraid-Memory-Gold",
-    "petal": "Memory-Gold",
-    "ring": 1,
-    "invariant": "MEMORY_STATIONARY"
-  },
-  "expected_result": true,
+  "ring": 1,
+  "version": "1.0.0",
   "steps": [
-    "receive canonical stationarity object",
-    "require repo to equal Riverbraid-Memory-Gold",
-    "require petal to equal Memory-Gold",
-    "require ring to equal 1",
-    "require invariant to equal MEMORY_STATIONARY",
-    "emit deterministic verification output"
+    { "id": 1, "name": "receive-signal" },
+    { "id": 2, "name": "validate-fields" },
+    { "id": 3, "name": "meaning-density" },
+    { "id": 4, "name": "redundancy-ceiling" },
+    { "id": 5, "name": "ring-buffer-coherence" },
+    { "id": 6, "name": "emit-result" }
   ],
-  "forbidden": [
-    "Date",
-    "Math.random",
-    "randomUUID",
-    "timestamps",
-    "absolute paths",
-    "environment dependent values",
-    "external lookups"
+  "test_vectors": [
+    { "name": "high_density_pass", "input": { "text": "Signal: RIVERBRAID deterministic kernel enforces mechanical honesty", "tokens": 8, "reset_buffer": true }, "expect": { "pass": true } },
+    { "name": "low_density_fail", "input": { "text": "the the the the the the the the", "tokens": 8 }, "expect": { "pass": false } },
+    { "name": "empty_text_fail", "input": { "text": "", "tokens": 5 }, "expect": { "pass": false } }
   ]
 }
